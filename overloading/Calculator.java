@@ -30,15 +30,15 @@ public class Calculator {
     }
 
     //Add exeption error in class numeric basic
-    public double Sum(double Number1, double Number2) throws Exception{
-        if (Number1 < 0 || Number2 < 0 ){
+    public double Sum(double Number1, double Number2) throws Exception {
+        if (Number1 < 0 || Number2 < 0) {
             Exception erro = new Exception();
             throw erro;
-            
+
         } else {
-            return Number1 + Number2;            
-        }       
-        
+            return Number1 + Number2;
+        }
+
     }
 
     public double Sub() {
@@ -49,8 +49,15 @@ public class Calculator {
         return Number1 - Number2;
     }
 
-    public double Division() {
-        return this.Number1 / this.Number2;
+    public double Division() throws ArithmeticException {
+        if (this.Number1 == 0 || this.Number2 == 0) {
+            ArithmeticException nodivision = new ArithmeticException();
+            System.out.println("not division");
+            throw nodivision;
+        } else {
+            return this.Number1 / this.Number2;
+        }
+
     }
 
     public double Division(double Number1, double Number2) {
